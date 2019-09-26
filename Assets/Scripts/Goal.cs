@@ -17,7 +17,7 @@ public class Goal : MonoBehaviour
     {
         Vector3 relativePos =carTransform.InverseTransformDirection(transform.position);
         Debug.Log(relativePos);
-        audioSource.panStereo = Vector3.Normalize(relativePos).x;
+        //audioSource.panStereo = Vector3.Normalize(relativePos).x;
         audioSource.Play();
     }
 }
