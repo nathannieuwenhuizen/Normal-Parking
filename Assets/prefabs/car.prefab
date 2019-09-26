@@ -375,6 +375,8 @@ MonoBehaviour:
   forwardSpeed: 2
   backwardSpeed: 2
   rotateSpeed: 2.5
+  radioSource: {fileID: 0}
+  deathRadioClip: {fileID: 0}
 --- !u!114 &6955748681960355468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +647,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157415387168132968, guid: ac65b93f82cd1b5499e63ba204c67f24,
+        type: 3}
+      propertyPath: angle
+      value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 5157415387168132971, guid: ac65b93f82cd1b5499e63ba204c67f24,
         type: 3}
