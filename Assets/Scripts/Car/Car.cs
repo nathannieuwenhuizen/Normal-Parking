@@ -26,6 +26,14 @@ public class Car : MonoBehaviour
     private Vector3 tempSpeed;
     private Rigidbody rb;
 
+    [SerializeField]
+    List<WheelCollider> wheelCollider = new List<WheelCollider>();
+    [SerializeField]
+    List<Transform> wheelTransform = new List<Transform>();
+    [SerializeField]
+    float maxMoterTorque;
+    [SerializeField]
+    float maxStreeingAngle;
 
     // Start is called before the first frame update
     void Start()
@@ -36,9 +44,22 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for(int  i=0;i<4;i++)
+        {
+            Vector3 position;
+            Quaternion rotation;
+            wheelCollider[i].GetWorldPose(out position, out rotation);
+
+            wheelTransform[i].transform.position = position;
+            wheelTransform[i].transform.rotation = rotation;
+        }
+
+        wheelCollider[2].brakeTorque = 0;
+        wheelCollider[3].brakeTorque = 0;
+              
     }
 
+    /*
     public void Drive(float input)
     {
         tempSpeed = rb.velocity;
@@ -55,6 +76,7 @@ public class Car : MonoBehaviour
     {
         transform.Rotate(new Vector3(0, (Mathf.Abs(Vector3.Distance(Vector3.zero, rb.velocity)) / forwardSpeed) * (input * rotateSpeed), 0));
     }
+    */
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "car")
@@ -73,4 +95,27 @@ public class Car : MonoBehaviour
             }
         }
     }
+
+    private void FixedUpdate()
+    {
+        float moter = Input.GetAxis("Vertical");
+        float streeing = Input.GetAxis("Horizontal");
+
+        float finalAngle = streeing * 45f;
+        wheelCollider[0].steerAngle = finalAngle;
+        wheelCollider[1].steerAngle = finalAngle;
+
+        foreach(WheelCollider wheel in wheelCollider)
+        {
+            wheel.motorTorque = moter * maxMoterTorque;
+        }
+        /*//break
+        if (Input.GetKey(KeyCode.A))
+        {
+            wheelCollider[2].brakeTorque = 20;
+            wheelCollider[3].brakeTorque = 20;
+        }
+        */
+    }
+
 }
