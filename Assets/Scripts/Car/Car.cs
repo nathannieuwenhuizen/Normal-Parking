@@ -118,11 +118,12 @@ public class Car : MonoBehaviour
             {
                 wheelCollider[i].brakeTorque = 20;
             }
-            */
+           
            
             //wheelCollider[2].brakeTorque = 20;
             //wheelCollider[3].brakeTorque = 20;
         }
+        */
 
     }
 
