@@ -18,8 +18,8 @@ public class InputHandeler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        car.Drive(Input.GetAxis(driveKey));
-        car.Turn(Input.GetAxis(rotateKey));
+        //car.Drive(Input.GetAxis(driveKey));
+        //car.Turn(Input.GetAxis(rotateKey));
         if (Input.GetKeyDown(KeyCode.H))
         {
             Goal.instance.EmitSound(transform);
