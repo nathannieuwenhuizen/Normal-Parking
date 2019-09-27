@@ -52,10 +52,12 @@ public class Car : MonoBehaviour
 
             wheelTransform[i].transform.position = position;
             wheelTransform[i].transform.rotation = rotation;
+
+           // wheelCollider[i].brakeTorque = 0;
         }
 
-        wheelCollider[2].brakeTorque = 0;
-        wheelCollider[3].brakeTorque = 0;
+       // wheelCollider[2].brakeTorque = 0;
+        //wheelCollider[3].brakeTorque = 0;
               
     }
 
@@ -109,13 +111,19 @@ public class Car : MonoBehaviour
         {
             wheel.motorTorque = moter * maxMoterTorque;
         }
-        /*//break
+        /*
         if (Input.GetKey(KeyCode.A))
         {
-            wheelCollider[2].brakeTorque = 20;
-            wheelCollider[3].brakeTorque = 20;
+            for(int i = 0; i < 4; i++) 
+            {
+                wheelCollider[i].brakeTorque = 20;
+            }
+            */
+           
+            //wheelCollider[2].brakeTorque = 20;
+            //wheelCollider[3].brakeTorque = 20;
         }
-        */
+
     }
 
 }
