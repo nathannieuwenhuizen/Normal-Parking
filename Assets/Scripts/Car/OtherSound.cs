@@ -11,6 +11,8 @@ public class OtherSound : MonoBehaviour
     [SerializeField]
     AudioClip alam;
     AudioSource audioSource;
+    [SerializeField]
+    GameObject zombie;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class OtherSound : MonoBehaviour
         {
             audioSource.PlayOneShot(destrucrion);
             audioSource.PlayOneShot(alam);
+            Instantiate(zombie);
         }
     }
     // Update is called once per frame

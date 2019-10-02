@@ -318,3 +318,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   alam: {fileID: 8300000, guid: e9d2d29517cf681419a6729b9f4d4b91, type: 3}
+  zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
