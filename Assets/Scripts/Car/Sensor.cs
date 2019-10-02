@@ -117,8 +117,8 @@ public class Sensor : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         
-        UnityEditor.Handles.color = Color.green;
-        UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, distance);
+       // UnityEditor.Handles.color = Color.green;
+       // UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, distance);
 
         float totalFOV = angle;
         float rayRange = distance;

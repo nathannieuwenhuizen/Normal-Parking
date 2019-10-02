@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4295239842592367360}
   - component: {fileID: 889145683}
   - component: {fileID: 889145684}
+  - component: {fileID: 6471839185868110588}
   m_Layer: 0
   m_Name: othercar
   m_TagString: car
@@ -217,7 +218,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -303,3 +304,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6471839185868110588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295239842592367391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  alam: {fileID: 8300000, guid: e9d2d29517cf681419a6729b9f4d4b91, type: 3}
