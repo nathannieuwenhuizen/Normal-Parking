@@ -53,11 +53,8 @@ public class Car : MonoBehaviour
             wheelTransform[i].transform.position = position;
             wheelTransform[i].transform.rotation = rotation;
 
-           // wheelCollider[i].brakeTorque = 0;
+           
         }
-
-       // wheelCollider[2].brakeTorque = 0;
-        //wheelCollider[3].brakeTorque = 0;
               
     }
 
@@ -100,30 +97,44 @@ public class Car : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         float moter = Input.GetAxis("Vertical");
         float streeing = Input.GetAxis("Horizontal");
+       
 
         float finalAngle = streeing * 45f;
         wheelCollider[0].steerAngle = finalAngle;
         wheelCollider[1].steerAngle = finalAngle;
 
-        foreach(WheelCollider wheel in wheelCollider)
+
+
+        foreach (WheelCollider wheel in wheelCollider)
         {
             wheel.motorTorque = moter * maxMoterTorque;
+            wheel.brakeTorque = 0;
+           
         }
         /*
         if (Input.GetKey(KeyCode.A))
         {
-            for(int i = 0; i < 4; i++) 
+            Debug.LogError("stop");
+
+           foreach(WheelCollider wheel in wheelCollider)
             {
-                wheelCollider[i].brakeTorque = 20;
+                wheel.brakeTorque = 50;
             }
-           
-           
-            //wheelCollider[2].brakeTorque = 20;
-            //wheelCollider[3].brakeTorque = 20;
+        }
+        else
+        {
+            foreach(WheelCollider wheel in wheelCollider)
+            {
+                wheel.brakeTorque = 0;
+            }
         }
         */
+
+        
+
 
     }
 
