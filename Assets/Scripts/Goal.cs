@@ -5,7 +5,9 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     public static Goal instance;
-    private AudioSource audioSource;
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip goalSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,27 @@ public class Goal : MonoBehaviour
         Debug.Log(relativePos);
         //audioSource.panStereo = Vector3.Normalize(relativePos).x;
         audioSource.Play();
+    }
+
+    private void Update()
+    {
+        GoalSound();
+    }
+
+    void GoalSound()
+    {
+        if (Input.GetKey(KeyCode.H))
+        {
+            Debug.LogError("Input:H");
+            audioSource.PlayOneShot(goalSound);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //GameClear
+        }
     }
 }
