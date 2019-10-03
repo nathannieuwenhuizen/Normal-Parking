@@ -109,7 +109,7 @@ public class Sensor : MonoBehaviour
 
             }
             frequencyValue = distanceToClosestPoint / distance; //between 0 and 1 where 1 is almost not and 0 about to hit the object.
-            Debug.Log("distance: " + distanceToClosestPoint);
+            //Debug.Log("distance: " + distanceToClosestPoint);
             
 
         }

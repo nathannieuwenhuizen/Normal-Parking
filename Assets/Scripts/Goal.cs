@@ -32,8 +32,10 @@ public class Goal : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.H))
         {
-            Debug.LogError("Input:H");
-            audioSource.PlayOneShot(goalSound);
+            //Debug.LogError("Input:H");
+            Instructor.instance.GiveDirection();
+
+            //audioSource.PlayOneShot(goalSound);
         }
     }
 
@@ -41,7 +43,7 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //GameClear
+            Instructor.instance.ParkingSucces();
         }
     }
 }

@@ -81,17 +81,19 @@ public class Car : MonoBehaviour
         if (collision.gameObject.tag == "car")
         {
             GameManager.OnCollission?.Invoke();
-            GetComponent<InputHandeler>().enabled = false;
-            radioSource.clip = deathRadioClip;
-            radioSource.volume = .5f;
-            radioSource.Play();
-            if (collision.gameObject.GetComponent<AudioSource>())
-            {
-                foreach (AudioSource audioS in collision.gameObject.GetComponents<AudioSource>())
-                {
-                    audioS.Play();
-                }
-            }
+            //GetComponent<InputHandeler>().enabled = false;
+            //radioSource.clip = deathRadioClip;
+            //radioSource.volume = .5f;
+            //radioSource.Play();
+            Instructor.instance.ParkingFail();
+
+            //if (collision.gameObject.GetComponent<AudioSource>())
+            //{
+            //    foreach (AudioSource audioS in collision.gameObject.GetComponents<AudioSource>())
+            //    {
+            //        audioS.Play();
+            //    }
+            //}
         }
     }
 

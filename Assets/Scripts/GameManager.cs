@@ -27,12 +27,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (broken)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneHandeler.ReloadScene();
-            }
+            SceneHandeler.ReloadScene();
         }
     }
 

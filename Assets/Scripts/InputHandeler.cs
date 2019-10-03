@@ -22,7 +22,8 @@ public class InputHandeler : MonoBehaviour
         //car.Turn(Input.GetAxis(rotateKey));
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Goal.instance.EmitSound(transform);
+            Instructor.instance.GiveDirection();
+            //Goal.instance.EmitSound(transform);
         }
     }
 }
