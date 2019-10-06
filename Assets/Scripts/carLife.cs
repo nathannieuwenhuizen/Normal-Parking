@@ -21,7 +21,7 @@ public class carLife : MonoBehaviour
             SceneHandeler.GoToScene(1);
         }
 
-        lifeText.text = life.ToString();
+        lifeText.text = "Life:"+life.ToString();
     }
 
     public void OnCollisionEnter(Collision collision)
