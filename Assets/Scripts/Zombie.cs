@@ -11,6 +11,7 @@ public class Zombie : MonoBehaviour
 
     public NavMeshAgent navigation;
 
+    [SerializeField]
     public Transform target;
     public bool trigger = true;
 
@@ -62,8 +63,8 @@ public class Zombie : MonoBehaviour
     IEnumerator Bounce()
     {
         navigation.enabled = false;
-        this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100, ForceMode.Force);
-        yield return new WaitForSeconds(1f);
+        this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 50, ForceMode.Force);
+        yield return new WaitForSeconds(0.5f);
         navigation.enabled = true;
         yield break;
     }

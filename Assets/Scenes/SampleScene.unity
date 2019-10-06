@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1071,6 +1071,12 @@ Transform:
   m_Father: {fileID: 295450834}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!224 &743257270 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6323869866434017838, guid: 38f2937b21bd33f488f8c668eca6c666,
+    type: 3}
+  m_PrefabInstance: {fileID: 6323869864961983141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &744476695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1091,7 @@ GameObject:
   - component: {fileID: 744476697}
   - component: {fileID: 744476696}
   - component: {fileID: 744476701}
+  - component: {fileID: 744476702}
   m_Layer: 0
   m_Name: Wall 3
   m_TagString: car
@@ -1276,6 +1283,21 @@ MonoBehaviour:
   destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
+--- !u!114 &744476702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744476695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 0}
+  alam: {fileID: 0}
+  zombie: {fileID: 1744443845311525102, guid: 8f9884895eaab423497088990a8cc85e, type: 3}
 --- !u!1 &907835376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,6 +1967,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01c11486d340faa48bccfa46c7cd0885, type: 3}
+--- !u!1 &1343309645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343309646}
+  - component: {fileID: 1343309648}
+  - component: {fileID: 1343309647}
+  m_Layer: 5
+  m_Name: Life_text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1343309646
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343309645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 743257270}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 198, y: -112.5}
+  m_SizeDelta: {x: 160, y: 47}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1343309647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343309645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &1343309648
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343309645}
+  m_CullTransparentMesh: 0
 --- !u!1 &1360236022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,6 +2058,7 @@ GameObject:
   - component: {fileID: 1360236024}
   - component: {fileID: 1360236023}
   - component: {fileID: 1360236028}
+  - component: {fileID: 1360236029}
   m_Layer: 0
   m_Name: Wall 4
   m_TagString: car
@@ -2150,6 +2250,21 @@ MonoBehaviour:
   destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
+--- !u!114 &1360236029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360236022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 0}
+  alam: {fileID: 0}
+  zombie: {fileID: 1744443845311525102, guid: 8f9884895eaab423497088990a8cc85e, type: 3}
 --- !u!1 &1425081738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,6 +2327,39 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!1 &1444714528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2125663350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1444714535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444714528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 5}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1444714536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444714528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66d239a4dcef47ecb963f4699ea210b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 100
+  lifeText: {fileID: 1343309647}
 --- !u!1 &1462356517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,6 +2544,7 @@ GameObject:
   - component: {fileID: 1616703891}
   - component: {fileID: 1616703890}
   - component: {fileID: 1616703895}
+  - component: {fileID: 1616703896}
   m_Layer: 0
   m_Name: Wall 2
   m_TagString: car
@@ -2587,6 +2736,21 @@ MonoBehaviour:
   destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
+--- !u!114 &1616703896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616703889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 0}
+  alam: {fileID: 0}
+  zombie: {fileID: 1744443845311525102, guid: 8f9884895eaab423497088990a8cc85e, type: 3}
 --- !u!1 &1723740902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2954,7 @@ GameObject:
   - component: {fileID: 2011036001}
   - component: {fileID: 2011036000}
   - component: {fileID: 2011036005}
+  - component: {fileID: 2011036006}
   m_Layer: 0
   m_Name: Wall1
   m_TagString: car
@@ -2981,6 +3146,21 @@ MonoBehaviour:
   destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
+--- !u!114 &2011036006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011035999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 0}
+  alam: {fileID: 0}
+  zombie: {fileID: 1744443845311525102, guid: 8f9884895eaab423497088990a8cc85e, type: 3}
 --- !u!1 &2120093885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3060,7 +3240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3276,6 +3456,10 @@ PrefabInstance:
         type: 3}
       propertyPath: Pan2D
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 3}

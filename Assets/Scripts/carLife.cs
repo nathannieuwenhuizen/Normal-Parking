@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class carLife : MonoBehaviour
 {
@@ -10,19 +11,15 @@ public class carLife : MonoBehaviour
     [SerializeField]
     Text lifeText;
 
- 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-
-       
-    }
     private void Update()
     {
-       
-       
+
+        if (life <= 0)
+        {
+            Globals.RESULT = Result.ZombieEat;
+            SceneHandeler.GoToScene(1);
+        }
 
         lifeText.text = life.ToString();
     }
