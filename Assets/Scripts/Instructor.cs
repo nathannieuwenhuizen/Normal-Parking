@@ -17,6 +17,12 @@ public class Instructor : MonoBehaviour
     [SerializeField]
     private AudioClip tooLeftSound;
     [SerializeField]
+    private AudioClip aBitLeftSound;
+    [SerializeField]
+    private AudioClip frontSound;
+    [SerializeField]
+    private AudioClip aBitRightSound;
+    [SerializeField]
     private AudioClip tooRightSound;
     [SerializeField]
     private AudioClip behindSound;
@@ -49,17 +55,39 @@ public class Instructor : MonoBehaviour
 
         if (relativePos.z < - 0.5f)
         {
-            PlaySound(behindSound, 1.5f, relativePos.x);
+            PlaySound(behindSound, 1f, relativePos.x);
         }
         else
         {
+            if ( relativePos.z > 0.9f )
+            {
+                PlaySound(frontSound, 1f, relativePos.x);
+                return;
+            }
+
             if (relativePos.x < 0f)
             {
-                PlaySound(tooRightSound, 1.5f, relativePos.x);
+                if (relativePos.x < 0.5f)
+                {
+                    PlaySound(tooRightSound, 1f, relativePos.x);
+                }
+                else
+                {
+                    PlaySound(aBitRightSound, 1f, relativePos.x);
+
+                }
             }
             else
             {
-                PlaySound(tooLeftSound, 1.5f, relativePos.x);
+                if (relativePos.x > 0.5f)
+                {
+                    PlaySound(tooLeftSound, 1f, relativePos.x);
+                }
+                else
+                {
+                    PlaySound(aBitLeftSound, 1f, relativePos.x);
+                }
+
             }
         }
     }
