@@ -53,7 +53,7 @@ public class Instructor : MonoBehaviour
         }
         else
         {
-            if (relativePos.x > 0f)
+            if (relativePos.x < 0f)
             {
                 PlaySound(tooRightSound, 1.5f, relativePos.x);
             }
@@ -66,7 +66,8 @@ public class Instructor : MonoBehaviour
 
     public void ParkingSucces()
     {
-        PlaySound(parkWinSound);
+        Globals.WINMESSAGE = "You succesfully parked!";
+        SceneHandeler.GoToScene(1);
     }
 
     //TODO: needs implementation!
