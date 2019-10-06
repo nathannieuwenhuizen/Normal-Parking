@@ -10,8 +10,6 @@ public class Timer : MonoBehaviour
     [SerializeField]
     float totalTime=60;
     int second;
-    [SerializeField]
-    private AudioClip survivedZombieClip;
 
     [SerializeField]
     List<AudioClip> timerSound = new List<AudioClip>();
