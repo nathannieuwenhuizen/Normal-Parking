@@ -18,6 +18,12 @@ public class Instructor : MonoBehaviour
     [SerializeField]
     private AudioClip tooLeftSound;
     [SerializeField]
+    private AudioClip aBitLeftSound;
+    [SerializeField]
+    private AudioClip frontSound;
+    [SerializeField]
+    private AudioClip aBitRightSound;
+    [SerializeField]
     private AudioClip tooRightSound;
     [SerializeField]
     private AudioClip behindSound;
@@ -43,7 +49,7 @@ public class Instructor : MonoBehaviour
     void Update()
     {
         Vector3 relativePos = Vector3.Normalize(carTransform.InverseTransformPoint(goalTransform.position));
-        Debug.Log(relativePos);
+        //Debug.Log(relativePos);
 
         if (timer.Getsecond == 59)
         {
@@ -70,24 +76,47 @@ public class Instructor : MonoBehaviour
 
         if (relativePos.z < - 0.5f)
         {
-            PlaySound(behindSound, 1.5f, relativePos.x);
+            PlaySound(behindSound, 1f, relativePos.x);
         }
         else
         {
-            if (relativePos.x > 0f)
+            if ( relativePos.z > 0.9f )
             {
-                PlaySound(tooRightSound, 1.5f, relativePos.x);
+                PlaySound(frontSound, 1f, relativePos.x);
+                return;
+            }
+
+            if (relativePos.x < 0f)
+            {
+                if (relativePos.x < 0.5f)
+                {
+                    PlaySound(tooRightSound, 1f, relativePos.x);
+                }
+                else
+                {
+                    PlaySound(aBitRightSound, 1f, relativePos.x);
+
+                }
             }
             else
             {
-                PlaySound(tooLeftSound, 1.5f, relativePos.x);
+                if (relativePos.x > 0.5f)
+                {
+                    PlaySound(tooLeftSound, 1f, relativePos.x);
+                }
+                else
+                {
+                    PlaySound(aBitLeftSound, 1f, relativePos.x);
+                }
+
             }
         }
     }
 
     public void ParkingSucces()
     {
-        PlaySound(parkWinSound);
+        Globals.RESULT = Result.Parking;
+        SceneHandeler.GoToScene(1);
     }
 
     //TODO: needs implementation!

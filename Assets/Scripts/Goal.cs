@@ -12,8 +12,6 @@ public class Goal : MonoBehaviour
     void Start()
     {
         instance = this;
-        audioSource = GetComponent<AudioSource>();
-
     }
     public void EmitSound(Transform carTransform)
     {

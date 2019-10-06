@@ -1,10 +1,11 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 using Random = UnityEngine.Random;
 
 
-namespace UnityStandardAssets.Vehicles.Car
-{
     [RequireComponent(typeof (CarController))]
     public class CarAudio : MonoBehaviour
     {
@@ -52,13 +53,25 @@ namespace UnityStandardAssets.Vehicles.Car
 
         [SerializeField]
         AudioClip afterClashSound;
+        [SerializeField]
+        AudioClip startEngine;
         AudioSource audioSource;
         private bool flag = true;
 
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(startEngine);
+        StartCoroutine(FadeOutStartEngine());
         }
+    IEnumerator FadeOutStartEngine()
+    {
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= 0.002f;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -66,7 +79,9 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 if (flag == true)
                 {
-                    audioSource.PlayOneShot(afterClashSound);
+                StopAllCoroutines();
+                audioSource.volume = 0.1f;
+                audioSource.PlayOneShot(afterClashSound);
                     flag = false;
                 }
 
@@ -110,8 +125,10 @@ namespace UnityStandardAssets.Vehicles.Car
         // Update is called once per frame
         private void Update()
         {
+           
+
             // get the distance to main camera
-            float camDist = (Camera.main.transform.position - transform.position).sqrMagnitude;
+            float camDist = (/*Camera.main.transform.position - */transform.position).sqrMagnitude;
 
             // stop sound if the object is beyond the maximum roll off distance
             if (m_StartedSound && camDist > maxRolloffDistance*maxRolloffDistance)
@@ -205,4 +222,3 @@ namespace UnityStandardAssets.Vehicles.Car
             return (1.0f - value)*from + value*to;
         }
     }
-}
