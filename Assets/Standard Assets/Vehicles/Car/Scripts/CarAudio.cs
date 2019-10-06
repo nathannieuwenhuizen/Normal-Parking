@@ -1,10 +1,11 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 using Random = UnityEngine.Random;
 
 
-namespace UnityStandardAssets.Vehicles.Car
-{
     [RequireComponent(typeof (CarController))]
     public class CarAudio : MonoBehaviour
     {
@@ -61,9 +62,16 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(startEngine);
-
-           
+        StartCoroutine(FadeOutStartEngine());
         }
+    IEnumerator FadeOutStartEngine()
+    {
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= 0.002f;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -72,7 +80,9 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 if (flag == true)
                 {
-                    audioSource.PlayOneShot(afterClashSound);
+                StopAllCoroutines();
+                audioSource.volume = 0.1f;
+                audioSource.PlayOneShot(afterClashSound);
                     flag = false;
                 }
 
@@ -213,4 +223,3 @@ namespace UnityStandardAssets.Vehicles.Car
             return (1.0f - value)*from + value*to;
         }
     }
-}

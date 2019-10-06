@@ -15,6 +15,7 @@ public class CarCollissionChecker : MonoBehaviour
         if (collision.gameObject.tag == "car")
         {
             Timer.instance.ZombieTimerStart();
+            Goal.instance.gameObject.SetActive(false);
         }
     }
 
