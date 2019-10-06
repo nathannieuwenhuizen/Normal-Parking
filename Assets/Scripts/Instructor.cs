@@ -45,7 +45,7 @@ public class Instructor : MonoBehaviour
     void Update()
     {
         Vector3 relativePos = Vector3.Normalize(carTransform.InverseTransformPoint(goalTransform.position));
-        Debug.Log(relativePos);
+        //Debug.Log(relativePos);
 
     }
     public void GiveDirection()

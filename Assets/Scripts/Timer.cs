@@ -18,33 +18,44 @@ public class Timer : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        second = (int)totalTime;
+        StartCoroutine(CountingDown());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CountingDown()
     {
-        totalTime -= Time.deltaTime;
-        second = (int)totalTime;
+        UpdateTimer();
+        yield return new WaitForSeconds(1);
+        second--;
+        if (second >= 0)
+        {
+            StartCoroutine(CountingDown());
+        }
+
+    }
+    void UpdateTimer()
+    {
         timerText.text = second.ToString();
-        if (second == 59)
+        if (second == 60)
         {
             audioSource.PlayOneShot(timerSound[0]);
-            Debug.LogError("59");
-        }else if (second == 31)
+        }
+        else if (second == 30)
         {
             audioSource.PlayOneShot(timerSound[1]);
-            Debug.LogError("31");
-        }else if (second == 11)
+        }
+        else if (second == 10)
         {
             audioSource.PlayOneShot(timerSound[2]);
-        }else if (second == 6)
+        }
+        else if (second == 5)
         {
             audioSource.PlayOneShot(timerSound[3]);
-        }else if (second == 0)
+        }
+        else if (second == 0)
         {
             audioSource.PlayOneShot(timerSound[4]);
         }
-
 
     }
 }
