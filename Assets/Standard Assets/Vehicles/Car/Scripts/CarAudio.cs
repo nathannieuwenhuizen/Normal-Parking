@@ -62,7 +62,7 @@ using Random = UnityEngine.Random;
         {
             audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(startEngine);
-        StartCoroutine(FadeOutStartEngine());
+            StartCoroutine(FadeOutStartEngine());
         }
     IEnumerator FadeOutStartEngine()
     {
