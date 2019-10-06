@@ -59,7 +59,7 @@ public class Instructor : MonoBehaviour
         }
         else
         {
-            if ( relativePos.z > 0.9f )
+            if ( relativePos.z > 0.95f )
             {
                 PlaySound(frontSound, 1f, relativePos.x);
                 return;

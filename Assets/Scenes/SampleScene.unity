@@ -1084,6 +1084,7 @@ GameObject:
   - component: {fileID: 744476698}
   - component: {fileID: 744476697}
   - component: {fileID: 744476696}
+  - component: {fileID: 744476701}
   m_Layer: 0
   m_Name: Wall 3
   m_TagString: car
@@ -1103,7 +1104,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1260,6 +1261,21 @@ Transform:
   m_Father: {fileID: 1872862104}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &744476701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744476695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
 --- !u!1 &907835376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +1958,7 @@ GameObject:
   - component: {fileID: 1360236025}
   - component: {fileID: 1360236024}
   - component: {fileID: 1360236023}
+  - component: {fileID: 1360236028}
   m_Layer: 0
   m_Name: Wall 4
   m_TagString: car
@@ -1961,7 +1978,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2118,6 +2135,21 @@ Transform:
   m_Father: {fileID: 1872862104}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1360236028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360236022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
 --- !u!1 &1425081738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,6 +2395,7 @@ GameObject:
   - component: {fileID: 1616703892}
   - component: {fileID: 1616703891}
   - component: {fileID: 1616703890}
+  - component: {fileID: 1616703895}
   m_Layer: 0
   m_Name: Wall 2
   m_TagString: car
@@ -2382,7 +2415,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2539,6 +2572,21 @@ Transform:
   m_Father: {fileID: 1872862104}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1616703895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616703889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
 --- !u!1 &1723740902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,8 +2659,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1872862104}
   m_Layer: 0
-  m_Name: Wall
-  m_TagString: Untagged
+  m_Name: Walls
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2741,6 +2789,7 @@ GameObject:
   - component: {fileID: 2011036002}
   - component: {fileID: 2011036001}
   - component: {fileID: 2011036000}
+  - component: {fileID: 2011036005}
   m_Layer: 0
   m_Name: Wall1
   m_TagString: car
@@ -2760,7 +2809,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2917,6 +2966,21 @@ Transform:
   m_Father: {fileID: 1872862104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011036005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011035999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fac6a57395842a4b6cf1a82c94ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destrucrion: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  alam: {fileID: 8300000, guid: 8a3802c4b8e7a3a4188152add76b3be6, type: 3}
+  zombie: {fileID: 3048139279438265983, guid: 69241c1c212ab443b9fa25969f271aaf, type: 3}
 --- !u!1 &2120093885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,6 +3241,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323869865175517652, guid: 38f2937b21bd33f488f8c668eca6c666,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 775.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323869865175517652, guid: 38f2937b21bd33f488f8c668eca6c666,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 426.8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4779653734494394326, guid: 38f2937b21bd33f488f8c668eca6c666, type: 3}

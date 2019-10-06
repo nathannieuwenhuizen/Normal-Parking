@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sensor : MonoBehaviour
 {
 
-    [Range(0, 5)]
+    [Range(0, 10)]
     [SerializeField]
     private float distance = 5;
     [SerializeField]
@@ -90,17 +90,18 @@ public class Sensor : MonoBehaviour
             // linecast between points
             if (Physics.Raycast(startPos, targetPos - startPos, out hit, distance))
             {
-                //Debug.Log("Hit " + hit.collider.gameObject.name);
-                // to show ray just for testing
-                float hitDistanceToClosestPoint =
-                    Vector3.Distance(
-                        transform.position,
-                        hit.point
-                        );
-                distanceToClosestPoint = Mathf.Min(distanceToClosestPoint, hitDistanceToClosestPoint);
-                Debug.DrawLine(startPos, hit.point, Color.green);
-
-
+                if (hit.collider.gameObject.tag != "goal")
+                {
+                    //Debug.Log("Hit " + hit.collider.gameObject.name);
+                    // to show ray just for testing
+                    float hitDistanceToClosestPoint =
+                        Vector3.Distance(
+                            transform.position,
+                            hit.point
+                            );
+                    distanceToClosestPoint = Mathf.Min(distanceToClosestPoint, hitDistanceToClosestPoint);
+                    Debug.DrawLine(startPos, hit.point, Color.green);
+                }
             }
             else
             {

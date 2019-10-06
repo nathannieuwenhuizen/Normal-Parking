@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -71,6 +72,14 @@ namespace UnityStandardAssets.Vehicles.Car
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
         }
 
+        private void Update()
+        {
+            if (CrossPlatformInputManager.GetAxis("Vertical") == 0)
+            {
+                m_Rigidbody.velocity *= 0.90f;
+            }
+
+        }
 
         private void GearChanging()
         {
@@ -169,6 +178,7 @@ namespace UnityStandardAssets.Vehicles.Car
             AddDownForce();
             CheckForWheelSpin();
             TractionControl();
+
         }
 
 
