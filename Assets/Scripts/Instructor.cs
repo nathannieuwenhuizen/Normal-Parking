@@ -50,8 +50,8 @@ public class Instructor : MonoBehaviour
     {
         Vector3 relativePos = Vector3.Normalize(carTransform.InverseTransformPoint(goalTransform.position));
         //Debug.Log(relativePos);
-
-        if (timer.Getsecond == 59)
+        /*
+        if (timer.Getsecond. == 59)
         {
             PlaySound(timecont[0]);
         }else if (timer.Getsecond == 31)
@@ -66,7 +66,7 @@ public class Instructor : MonoBehaviour
         }else if (timer.Getsecond == 0)
         {
             PlaySound(timecont[4]);
-        }
+        }*/
 
     }
     public void GiveDirection()
