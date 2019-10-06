@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - car
-  - Zombie
+  - goal
   layers:
   - Default
   - TransparentFX
@@ -15,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - goal
   - 
   - 
   - 
