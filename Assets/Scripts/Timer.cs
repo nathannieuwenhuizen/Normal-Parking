@@ -10,21 +10,34 @@ public class Timer : MonoBehaviour
     [SerializeField]
     float totalTime=60;
     int second;
+    [SerializeField]
+    private AudioClip survivedZombieClip;
 
     [SerializeField]
     List<AudioClip> timerSound = new List<AudioClip>();
     AudioSource audioSource;
-    // Start is called before the first frame update
+
+    private bool zombieMode = false;
+
+    public static Timer instance;
     void Start()
     {
+        instance = this;
         audioSource = GetComponent<AudioSource>();
-        second = (int)totalTime;
-        StartCoroutine(CountingDown());
+
+        ParkingTimerStart();
     }
 
     IEnumerator CountingDown()
     {
-        UpdateTimer();
+        if (zombieMode)
+        {
+            UpdateTimerZombieMode();
+
+        } else
+        {
+            UpdateTimerParkingMode();
+        }
         yield return new WaitForSeconds(1);
         second--;
         if (second >= 0)
@@ -33,28 +46,55 @@ public class Timer : MonoBehaviour
         }
 
     }
-    void UpdateTimer()
+    public void ZombieTimerStart()
+    {
+        if (zombieMode) { return; }
+        StopAllCoroutines();
+
+        zombieMode = true;
+        second = (int)totalTime;
+        StartCoroutine(CountingDown());
+    }
+    public void ParkingTimerStart()
+    {
+        second = (int)totalTime;
+        StartCoroutine(CountingDown());
+    }
+    private void UpdateTimerParkingMode()
     {
         timerText.text = second.ToString();
         if (second == 60)
         {
-            audioSource.PlayOneShot(timerSound[0]);
+            //Instructor.instance?.PlaySound(timerSound[0]);
         }
         else if (second == 30)
         {
-            audioSource.PlayOneShot(timerSound[1]);
+            Instructor.instance?.PlaySound(timerSound[1]);
         }
         else if (second == 10)
         {
-            audioSource.PlayOneShot(timerSound[2]);
+            Instructor.instance?.PlaySound(timerSound[2]);
         }
         else if (second == 5)
         {
-            audioSource.PlayOneShot(timerSound[3]);
+            Instructor.instance?.PlaySound(timerSound[3]);
         }
         else if (second == 0)
         {
-            audioSource.PlayOneShot(timerSound[4]);
+            Globals.RESULT = Result.TooLongPark;
+            SceneHandeler.GoToScene(1);
+
+            Instructor.instance?.PlaySound(timerSound[4]);
+        }
+
+    }
+    private void UpdateTimerZombieMode()
+    {
+        timerText.text = second.ToString();
+        if (second == 0)
+        {
+            Globals.RESULT = Result.ZombieSurvive;
+            SceneHandeler.GoToScene(1);
         }
 
     }

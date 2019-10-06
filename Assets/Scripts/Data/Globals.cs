@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class Globals
 {
-    public static string WINMESSAGE = "You survived through the zombie horde!";
+    public static Result RESULT = Result.Parking;
 }

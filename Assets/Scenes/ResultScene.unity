@@ -594,7 +594,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f581f5a1908c04f9cbb8b05a70d971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resultText: {fileID: 1824261625}
   messageText: {fileID: 77137520}
+  audioS: {fileID: 1766162339}
+  resultClipParking: {fileID: 8300000, guid: eca07f6280a95634e8e25687c2b9f429, type: 3}
+  resultClipTooLongParking: {fileID: 8300000, guid: fae8593f61fe8774cb92abec2ca835f4,
+    type: 3}
+  resultClipEatenByZombies: {fileID: 8300000, guid: 1b1ccd503891b6a4d96d9e2b3e4092a5,
+    type: 3}
+  resultClipZombieSurvive: {fileID: 8300000, guid: 0eb36237345ea7e43985efd3e2578e9c,
+    type: 3}
 --- !u!1 &1282746483
 GameObject:
   m_ObjectHideFlags: 0

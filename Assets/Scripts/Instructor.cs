@@ -94,7 +94,7 @@ public class Instructor : MonoBehaviour
 
     public void ParkingSucces()
     {
-        Globals.WINMESSAGE = "You succesfully parked!";
+        Globals.RESULT = Result.Parking;
         SceneHandeler.GoToScene(1);
     }
 
