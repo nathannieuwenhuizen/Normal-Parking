@@ -52,16 +52,22 @@ namespace UnityStandardAssets.Vehicles.Car
 
         [SerializeField]
         AudioClip afterClashSound;
+        [SerializeField]
+        AudioClip startEngine;
         AudioSource audioSource;
         private bool flag = true;
 
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(startEngine);
+
+           
         }
 
         private void OnCollisionEnter(Collision collision)
         {
+            audioSource.volume = 0.9f;
             if (collision.gameObject.tag=="car")
             {
                 if (flag == true)
@@ -110,6 +116,8 @@ namespace UnityStandardAssets.Vehicles.Car
         // Update is called once per frame
         private void Update()
         {
+           
+
             // get the distance to main camera
             float camDist = (/*Camera.main.transform.position - */transform.position).sqrMagnitude;
 
