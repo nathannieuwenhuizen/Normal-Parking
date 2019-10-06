@@ -75,7 +75,6 @@ using Random = UnityEngine.Random;
 
         private void OnCollisionEnter(Collision collision)
         {
-            audioSource.volume = 0.9f;
             if (collision.gameObject.tag=="car")
             {
                 if (flag == true)
