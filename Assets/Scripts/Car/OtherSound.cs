@@ -14,6 +14,7 @@ public class OtherSound : MonoBehaviour
     [SerializeField]
     GameObject zombie;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,10 @@ public class OtherSound : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.LogError("other");
             audioSource.PlayOneShot(destrucrion);
             audioSource.PlayOneShot(alam);
-            Instantiate(zombie);
+           Instantiate(zombie);
         }
     }
     // Update is called once per frame

@@ -1,22 +1,70 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour
 {
 
     Transform player;
-    UnityEngine.AI.NavMeshAgent navigation;
+
+    public NavMeshAgent navigation;
+
+    public Transform target;
+    public bool trigger = true;
+
+    [SerializeField]
+    AudioClip eatYou;
+    [SerializeField]
+    AudioClip Attack;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        navigation = GetComponent<UnityEngine.AI.NavMeshAgent>();
-    }
+        audioSource = GetComponent<AudioSource>();
 
+        navigation = this.gameObject.GetComponent<NavMeshAgent>();
+
+        target = GameObject.Find("Car").transform;
+    }
     // Update is called once per frame
     void Update()
     {
-        navigation.SetDestination(player.position);
+       
+        if (target != null)
+        {
+            if (navigation.enabled)
+            {
+                navigation.destination = target.position;
+            }
+        }
+
+        audioSource.PlayOneShot(Attack);
+
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (navigation.enabled)
+            {
+                StartCoroutine(Bounce());
+            }
+           // audioSource.PlayOneShot(eatYou);
+        }
+
+
+    }
+
+    IEnumerator Bounce()
+    {
+        navigation.enabled = false;
+        this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100, ForceMode.Force);
+        yield return new WaitForSeconds(1f);
+        navigation.enabled = true;
+        yield break;
     }
 }

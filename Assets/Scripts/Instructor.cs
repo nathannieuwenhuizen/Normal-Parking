@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Instructor : MonoBehaviour
 {
+    private Timer timer;
     public static Instructor instance;
     AudioSource audioSource;
 
@@ -28,18 +29,38 @@ public class Instructor : MonoBehaviour
     private AudioClip parkFailSound;
     [SerializeField]
     private AudioClip parkWinSound;
+    [SerializeField]
+    List<AudioClip> timecont = new List<AudioClip>();
 
     void Start()
     {
         instance = this;
         audioSource = GetComponent<AudioSource>();
         PlaySound(introduction);
+        timer = GameObject.Find("Canvas").GetComponent<Timer>();
     }
 
     void Update()
     {
         Vector3 relativePos = Vector3.Normalize(carTransform.InverseTransformPoint(goalTransform.position));
         Debug.Log(relativePos);
+
+        if (timer.Getsecond == 59)
+        {
+            PlaySound(timecont[0]);
+        }else if (timer.Getsecond == 31)
+        {
+            PlaySound(timecont[1]);
+        }else if (timer.Getsecond == 11)
+        {
+            PlaySound(timecont[2]);
+        }else if (timer.Getsecond == 6)
+        {
+            PlaySound(timecont[3]);
+        }else if (timer.Getsecond == 0)
+        {
+            PlaySound(timecont[4]);
+        }
 
     }
     public void GiveDirection()
