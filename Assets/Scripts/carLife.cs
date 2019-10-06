@@ -18,7 +18,7 @@ public class carLife : MonoBehaviour
         if (life <= 0)
         {
             Globals.RESULT = Result.ZombieEat;
-            SceneHandeler.GoToScene(1);
+            SceneHandeler.GoToScene(2);
         }
 
         lifeText.text = "Life:"+life.ToString();

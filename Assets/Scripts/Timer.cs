@@ -92,7 +92,7 @@ public class Timer : MonoBehaviour
         if (second == 0)
         {
             Globals.RESULT = Result.ZombieSurvive;
-            SceneHandeler.GoToScene(1);
+            SceneHandeler.GoToScene(2);
         }
 
     }
