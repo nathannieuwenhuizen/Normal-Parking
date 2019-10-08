@@ -80,7 +80,7 @@ public class Timer : MonoBehaviour
         else if (second == 0)
         {
             Globals.RESULT = Result.TooLongPark;
-            SceneHandeler.GoToScene(1);
+            SceneHandeler.GoToScene(2);
 
             Instructor.instance?.PlaySound(timerSound[4]);
         }

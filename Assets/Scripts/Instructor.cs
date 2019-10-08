@@ -71,18 +71,19 @@ public class Instructor : MonoBehaviour
     }
     public void GiveDirection()
     {
+        float volume = 0.3f;
         Vector3 relativePos = Vector3.Normalize(carTransform.InverseTransformPoint(goalTransform.position));
         Debug.Log(relativePos);
 
         if (relativePos.z < - 0.5f)
         {
-            PlaySound(behindSound, 1f, relativePos.x);
+            PlaySound(behindSound, volume, relativePos.x);
         }
         else
         {
             if ( relativePos.z > 0.95f )
             {
-                PlaySound(frontSound, 1f, relativePos.x);
+                PlaySound(frontSound, volume, relativePos.x);
                 return;
             }
 
@@ -90,11 +91,11 @@ public class Instructor : MonoBehaviour
             {
                 if (relativePos.x < 0.5f)
                 {
-                    PlaySound(tooRightSound, 1f, relativePos.x);
+                    PlaySound(tooRightSound, volume, relativePos.x);
                 }
                 else
                 {
-                    PlaySound(aBitRightSound, 1f, relativePos.x);
+                    PlaySound(aBitRightSound, volume, relativePos.x);
 
                 }
             }
@@ -102,11 +103,11 @@ public class Instructor : MonoBehaviour
             {
                 if (relativePos.x > 0.5f)
                 {
-                    PlaySound(tooLeftSound, 1f, relativePos.x);
+                    PlaySound(tooLeftSound, volume, relativePos.x);
                 }
                 else
                 {
-                    PlaySound(aBitLeftSound, 1f, relativePos.x);
+                    PlaySound(aBitLeftSound, volume, relativePos.x);
                 }
 
             }
@@ -116,7 +117,7 @@ public class Instructor : MonoBehaviour
     public void ParkingSucces()
     {
         Globals.RESULT = Result.Parking;
-        SceneHandeler.GoToScene(1);
+        SceneHandeler.GoToScene(2);
     }
 
     //TODO: needs implementation!
@@ -125,7 +126,7 @@ public class Instructor : MonoBehaviour
         PlaySound(parkFailSound);
     }
 
-    public void PlaySound(AudioClip clip, float volume = 1f, float pan = 0f)
+    public void PlaySound(AudioClip clip, float volume = .7f, float pan = 0f)
     {
         audioSource.panStereo = pan;
         audioSource.volume = volume;
